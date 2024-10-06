@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I FITNESS</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    body {
+        font-family: "Rubik", sans-serif;
+        color: aliceblue;
+        margin: 0px;
+        padding: 0px;
+        background-image: url('img/gym.jpg');
+    }
+
+    .left {
+        position: absolute;
+        top: 22px;
+        left: 30px;
+        display: inline-block;
+
+    }
+
+    .left img {
+        width: 50px;
+
+
+    }
+
+    .left div {
+        line-height: 1;
+        text-align: center;
+    }
+
+    .mid {
+        font-size: 10px;
+        display: block;
+        margin: 22px auto;
+        width: 50%;
+        border: solid rgb(252, 247, 240);
+        border-radius: 20px;
+    }
+
+    .right {
+
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        display: inline-block;
+
+    }
+
+    .navbar {
+        display: inline-block;
+
+
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 4px 40px;
+    }
+
+    .navbar li a :hover,.navbar li a:active {
+        text-decoration: underline;
+        color: grey;
+    }
+
+    .btn {
+        font-family: "Rubik", sans-serif;
+        margin: 6px 5px;
+        padding: 5px 15px;
+        border-radius: 10px;
+        color: rgb(252, 252, 252);
+        background-color: black;
+        border: 2px solid grey;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: grey;
+    }
+
+    .container {
+        border: 3px solid rgb(255, 255, 255);
+    margin: 190px 96px;
+    padding: 6px 168px;
+    border-radius: 16px;
+    width: 5%;
+    }
+
+    .container h1 {
+        text-align: center;
+        left: -60px;
+        top: -8px;
+
+    }
+
+    .form-group input {
+        font-family: "Rubik", sans-serif;
+    text-align: center;
+    display: block;
+    margin: 12px -80px;
+    width: 127px;
+    padding: 3px 49px;
+    border: 12px solid white;
+
+    }
+    .container button{
+        display: block;
+        width: -18%;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <!-- left box for logo -->
+            <img src="img/logo.jpg" alt="">
+            <div>
+                I Fitness
+            </div>
+        </div>
+        <div class="mid">
+            <!-- mid box for navigation -->
+            <ul class="navbar">
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">FITNESS CALC</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <!-- right box for contact  -->
+            <button class="btn">Login</button><button class="btn">Signup</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="noaction.php"></form>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your age">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your gender">          
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your number">
+        </div>
+        <button class="btn">Submit</button>
+    </div>
+</body>
+
+</html>

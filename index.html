@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I FITNESS</title>
+
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="css/style.css">
@@ -14,7 +15,7 @@
         color: aliceblue;
         margin: 0px;
         padding: 0px;
-        background-image: url('img/gym.jpg');
+        background-image: url('img/main2.jpg');
     }
 
     .left {
@@ -39,10 +40,10 @@
     .mid {
         font-size: 10px;
         display: block;
-        margin: 22px auto;
+        margin: 50px auto;
         width: 50%;
         border: solid rgb(252, 247, 240);
-        border-radius: 20px;
+        border-radius: 60px;
     }
 
     .right {
@@ -55,7 +56,14 @@
     }
 
     .navbar {
-        display: inline-block;
+        display: flex;
+        /* Use flexbox for proper alignment */
+        justify-content: center;
+        /* Center the navbar items */
+        align-items: center;
+        /* Vertically center items */
+        list-style: none;
+        /* Remove bullets from the list */
 
 
     }
@@ -68,10 +76,24 @@
     .navbar a {
         color: white;
         text-decoration: none;
-        padding: 4px 40px;
+        padding: 60px 40px;
     }
 
-    .navbar li a :hover,.navbar li a:active {
+    .navbar li {
+        margin: 0 10px;
+        /* Add space between list items */
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 4px 10px;
+        /* Adjust spacing inside the links */
+        font-size: 16px;
+    }
+
+    .navbar li a :hover,
+    .navbar li a:active {
         text-decoration: underline;
         color: grey;
     }
@@ -94,10 +116,10 @@
 
     .container {
         border: 3px solid rgb(255, 255, 255);
-    margin: 190px 96px;
-    padding: 6px 168px;
-    border-radius: 16px;
-    width: 5%;
+        margin: 25px 140px;
+        padding: 6px 168px;
+        border-radius: 16px;
+        width: 5%;
     }
 
     .container h1 {
@@ -109,17 +131,55 @@
 
     .form-group input {
         font-family: "Rubik", sans-serif;
-    text-align: center;
-    display: block;
-    margin: 12px -80px;
-    width: 127px;
-    padding: 3px 49px;
-    border: 12px solid white;
+        text-align: center;
+        display: block;
+        margin: 12px -80px;
+        width: 127px;
+        padding: 3px 49px;
+        border: 12px solid white;
 
     }
-    .container button{
+
+    .container button {
         display: block;
         width: -18%;
+    }
+
+    .container select {
+        font-family: "Rubik", sans-serif;
+        text-align: center;
+        display: block;
+        margin: 12px 0;
+        width: 100%;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+    }
+
+    .container button {
+        margin: 20px auto;
+        display: block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: black;
+        color: white;
+        border: 2px solid grey;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .form-group select {
+        padding: 8px;
+        border: 2px solid #333;
+        border-radius: 5px;
+        background-color: white;
+        /* White background */
+        color: black;
+        /* Text color */
+        font-size: 16px;
     }
 </style>
 
@@ -127,7 +187,7 @@
     <header class="header">
         <div class="left">
             <!-- left box for logo -->
-            <img src="img/logo.jpg" alt="">
+            <img src="img/logo.webp" alt="">
             <div>
                 I Fitness
             </div>
@@ -136,8 +196,8 @@
             <!-- mid box for navigation -->
             <ul class="navbar">
                 <li><a href="#" class="active">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">FITNESS CALC</a></li>
+                <li><a href="/about.html">ABOUT US</a></li>
+                <li><a href="/calculator.html">FITNESS CALC</a></li>
                 <li><a href="#">CONTACT US</a></li>
             </ul>
         </div>
@@ -147,22 +207,41 @@
         </div>
     </header>
     <div class="container">
-        <h1>Register</h1>
-        <form action="noaction.php"></form>
-        <div class="form-group">
-            <input type="text" name="" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <input type="text" name="" placeholder="Enter your age">
-        </div>
-        <div class="form-group">
-            <input type="text" name="" placeholder="Enter your gender">          
-        </div>
-        <div class="form-group">
-            <input type="text" name="" placeholder="Enter your number">
-        </div>
-        <button class="btn">Submit</button>
+        <h1>Intrested!</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Add the access key for Web3Forms -->
+            <input type="hidden" name="access_key" value="e8296ab1-56f7-4b86-bb24-8158663ec0f7">
+
+            <!-- Input fields with labels -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="number">Telephone:</label>
+                <input type="tel" id="number" name="number" placeholder="Enter your number" pattern="[0-9]{10}"
+                    maxlength="10" required>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
     </div>
+
+
 </body>
 
 </html>
